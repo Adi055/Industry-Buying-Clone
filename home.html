@@ -4,9 +4,621 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home-page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+         #nav >#nav-bar{
+            background-color: #232f3e;
+            height: 70px;
+            display: flex;
+        }
+        #nav-bar>div{
+         
+         display: flex;
+         align-items: center;
+        
+        }
+        #second>form>input{
+            
+            width: 33vw;
+            height: 2.7vw;
+            border: none;
+           
+        }
+        #nav-bar > div>  h1>span{
+            color:#db3e19;
+        }
+       
+        #first{
+            margin-left: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        #second{
+            margin-left: 70px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+        #second > form{
+            color: #555;
+            display: flex;
+            padding: 2px;
+            border: 1px solid currentColor;
+            border-radius: 5px;
+            margin: 0 0 30px;
+            background: #db3e19;
+        }
+        #second > form>input[type="search"]{
+            border: none;
+            background: transparent;
+            margin: 0;
+            padding: 7px 8px;
+            font-size: 14px;
+            color: inherit;
+            border: 1px solid transparent;
+            border-radius: inherit;
+        }
+        #second > form>button[type="submit"]{
+            text-indent: -999px;
+            overflow: hidden;
+            width: 40px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid transparent;
+            border-radius: inherit;
+            background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        #second > form>button[type="submit"]:hover{
+            opacity: 1;
+        }
+        #second > form>button[type="submit"]:focus,#second > form>input[type="search"]:focus{
+            box-shadow: 0 0 3px 0 #1183d6;
+            border-color: #1183d6;
+            outline: none;
+        }
+        #top{
+            text-align: right;
+            margin-right: 20px;
+        }
+        #top >p>span{
+            color: #db3e19;
+        }
+        #top >p{
+            font-size: 14px;
+        }
+        #third{
+            margin-left: 35px;
+            width: 10%;
+        }
+        #third >img{
+            width: 25px;
+            color: white;
+           margin-right: 5px;
+           cursor: pointer;
+        }
+        #third>p{
+            color: white;
+            font-size: 14px;
+        }
+        #four{
+            margin-left: 20px;
+            
+        }
+        #four>img{
+            width: 25px;
+            color: white;
+           margin-right: 5px;
+           cursor: pointer;
+        }
+        #four>p{
+            color: white;
+           font-size: 15px;
+        }
+        #five{
+            margin-left: 30px;
+        }
+        #five>img{
+            width: 25px;
+            color: white;
+           margin-right: 5px;
+           cursor: pointer;
+        }
+        #five>p{
+            color: white;
+           font-size: 13px;
+        }
+        #six{
+            margin-left: 28px;
+        }
+        #six>img{
+            width: 25px;
+            color: white;
+           margin-right: 5px;
+           cursor: pointer;
+        }
+        #six>p{
+            color: white;
+           font-size: 13px;
+          
+           
+        }
+         /* nav-bar completed */
+        #side-bar{
+            box-sizing: border-box;
+            width: 22%;
+            border: 1px solid red;
+            height: 520px;
+
+        }
+        #garden{
+            display: flex;
+        }
+        #garden >.agri>img{
+            box-sizing: border-box;
+            width: 25px;
+            margin-left: 5px;
+           
+        }
+        /* #garden >.agri{
+           display: inline;
+        } */
+        #garden >.land{
+            margin-top: 3px;
+           margin-left: 13px;
+          
+        }
+        #garden:hover{
+            color: white;
+           background-color: rgb(89, 86, 86);
+           
+        }
+       #garden>.garden-content{
+        display: none;
+        position: right;
+        background-color: rgb(89, 86, 86);
+        min-width: 230px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+       }
+       #garden:hover >.garden-content{
+        color:white;
+        display: block;
+        margin-left:154px;
+       }
+    </style>
 </head>
 <body>
+    <div id="top">
+        <p>For any query, email us at <span> care@industrybuying.com</span> or call us on <span>+91 8448449073</span></p>
+    </div>
+    <div id="nav">
+    <div id="nav-bar">
+        <div id="first">
+        <h1>industry<span>buying</span></h1>
+        </div>
+        <div id="second">
+          <form action="">
+       <input type="text" placeholder="search products by supplier" >
+       <button type="submit">Search</button>
+    </form>
+       </div>
+       <div id="third">
+        <img src="https://cdn0.iconfinder.com/data/icons/buno-arrows-simple/32/__sign_in_enter-512.png" alt="">
+        
+        <p>Sign In <br>My Account</p>
+       </div>
+       <div id="four">
+        <img src="https://cdn2.iconfinder.com/data/icons/controls-navigation/64/check-in-512.png" alt="track">
+        <p>Track <br> Order</p>
+    </div>
+    <div id="five">
+        <img src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/shopping-cart-alt-1024.png" alt="">
+        <p>CART</p>
+    </div>
+    <div id="six">
+        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2567/512/play_store-512.png" alt="">
+       
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/640px-App_Store_%28iOS%29.svg.png" alt="">
+        
+        <p>Download Apps</p>
+    </div>
+    </div>
     
+    </div>
+    <!-- nav-bar completed -->
+
+    <div id="side-bar">
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn1.iconfinder.com/data/icons/agriculture-and-farming-30/85/shovel_gardening_tool_farm_agriculture-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Agriculture Garden & Landscape</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+
+        <!-- second -->
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn2.iconfinder.com/data/icons/power-tools-ui-next-2020-1/16/01_heat-gun-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Power Tools</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn0.iconfinder.com/data/icons/education-training-1/33/stationery-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Office Supplies</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn4.iconfinder.com/data/icons/industry-manufacture/64/1_material_handling_move_package_warehouse-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Material Handling and Packa...</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn2.iconfinder.com/data/icons/tools-glyph-black/614/3533_-_Air_Pump-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Pumps</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn4.iconfinder.com/data/icons/car-maintenance-and-service/32/spanner-maintenance-garage-car-service-repair-mechanic-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Automotive Maintenance an... </p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn1.iconfinder.com/data/icons/agriculture-and-farming-30/85/gardening_gloves_protection_safety-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Safety </p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn4.iconfinder.com/data/icons/planner-basic/64/vacuum-cleaner-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Cleaning</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn0.iconfinder.com/data/icons/nature-and-environment-1/64/electricity-green-environment-leaf-plug-energy-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Electrical</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn0.iconfinder.com/data/icons/engineering-and-manufacturing/85/wrench_spanner_hand_repair_tool_worker_construction-1024.png" alt="">
+           </div>
+            <div class="land">
+            <p>Hand Tools</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+        <div id="garden">
+            <div class="agri">
+            <img src="https://cdn1.iconfinder.com/data/icons/testing-8/128/Set16-02-512.png" alt="">
+           </div>
+            <div class="land">
+            <p>Testing and Measuring Instr...</p>
+            </div>
+            <div class="garden-content">
+                <p>Grain Processing Machine</p>
+                <br>
+                <p>Tillers and Cultivator</p>
+                <br>
+                <p>Brush Cutter and Accessories</p>
+                <br>
+                <p>Chaff Cutter</p>
+                <br>
+                <p>Sprayers</p>
+                <br>
+                <p>Chain Saw</p>
+                <br>
+                <p>Water Pump Sets</p>
+                <br>
+                <p>Lawn Mower</p>
+                <br>
+                <p>Earth Auger</p>
+                <br>
+                <p>Seed Planter</p>
+                <br>
+                <p>Garden Hand Tools</p>
+                <br>
+                <p>Fertilizer and Pest Control</p>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
+<script>
+
+
+</script>
