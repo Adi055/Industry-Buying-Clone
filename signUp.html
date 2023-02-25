@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign up</title>
     <style>
         form{
             box-sizing: border-box;
@@ -65,37 +65,52 @@
         <input placeholder="Email" type="email" id="email" />
         <label for="">Your Password:-</label>
         <input type="password" placeholder="enter your password" id="password">
-        
+        <label for="">Confirm Your Password:-</label>
+        <input type="password" placeholder="enter your password" id="pass">
         <input type="submit" value="Submit" id="submit"/>
     </form>
 </body>
 </html>
 <script>
-   
+    Lpdata=JSON.parse(localStorage.getItem("form"))||[]
     let formEl=document.querySelector("form");
-   
+    let Name=document.getElementById("name");
+    let Email=document.getElementById("email");
+    let Password=document.getElementById("password");
+    let Cpass=document.getElementById("pass");
 
 
-    formEl.addEventListener("submit",UserlogIn)
-      
-    function UserlogIn(event){
-        event.preventDefault()
-        let Name=document.getElementById("name").value;
-        let Email=document.getElementById("email").value;
-        let Password=document.getElementById("password").value;
-        
-        Lpdata=JSON.parse(localStorage.getItem("form"))||[];
-        console.log(Lpdata)
-        let user = Lpdata.find((data) => data.name === Name && data.email === Email && data.password === Password );
-        console.log(user);
-        if( user){
-            window.location.href='home.html'
-        }
-        else{
-            alert("Invalid Email or Password. Please try again")
+    formEl.addEventListener("submit",function(e){
+        e.preventDefault()
+
+        if(Password.value!==Cpass.value){
+            alert("Passwords do not match. Please try again.");
+            return;
         }
 
 
-    }
+        let formdata={
+            name:Name.value,
+            email:Email.value,
+            password:Password.value,
+            confirmpassword:Cpass.value
+        }
+
+        let emailexist=false;
+
+        for(let i=0; i<Lpdata.length; i++){
+            if(Lpdata[i].email===Email.value){
+                emailexist=true;
+                break;
+            }
+        }
+        if(emailexist){
+            alert("Email already exists. Please try again with a different email.")
+            return
+        }
+
+        Lpdata.push(formdata)
+        localStorage.setItem("form",JSON.stringify(Lpdata))
+    })
 
 </script>
