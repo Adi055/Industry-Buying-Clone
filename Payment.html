@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         #nav-bar > div>  h1>span{
+            color:#db3e19;
+        }
+        #nav >#nav-bar{
+            background-color: #232f3e;
+            height: 70px;
+            display: flex;
+        }
+        
+         #top{
+           
+          
+           text-align: right;
+           margin-right: 20px;
+       }
+      
+       #top >p{
+           font-size: 14px;
+       }
+       #first{
+        margin-top: 13px;
+       }
+       #top >p>span{
+            color: #db3e19;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #232F3E;
+            border-radius: 10px;
+        }
+
+        h2, h3 {
+            margin-top: 0;
+            color: white;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"], label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            border: none;
+        background-color: #232F3E;
+        color: white;
+        width: 15vw;
+        height: 2.5vw;
+        cursor: pointer;
+        font-size: 13px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 500px;
+        }
+        label{
+            color: white;
+        }
+        h2{
+            margin-left: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <p>For any query, email us at <span> care@industrybuying.com</span> or call us on <span>+91 8448449073</span></p>
+    </div>
+    <div id="nav">
+    <div id="nav-bar">
+        <div id="first">
+        <a href="./home.html" style="text-decoration: none; "><h1 style="color: white;">industry<span style="color: #db3e19;">buying</span></h1></a>
+      </div>
+    </div>
+    <div style="margin-top: 20px;">
+    <form>
+        <h2>Payment Information</h2>
+
+        <h3>Payment Method</h3>
+        <input type="radio" id="credit" name="payment" value="credit">
+        <label for="credit">Credit Card</label>
+        <input type="radio" id="debit" name="payment" value="debit">
+        <label for="debit">Debit Card</label>
+
+
+        <h3>Card Information</h3>
+        <label for="cardname">Cardholder Name:</label>
+        <input type="text" id="cardname" name="cardname" required>
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" id="cardnumber" name="cardnumber" required>
+        <label for="expdate">Expiration Date:</label>
+        <input type="text" id="expdate" name="expdate" placeholder="MM / YY" required>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        
+    </form>
+    <button type="submit" onclick="makePayment()">Place Order</button>
+</div>
+
+</body>
+</html>
+<script>
+    let formEl=document.querySelector("form")
+    let inputEl=document.querySelector('button[type="submit"]')
+
+    inputEl.addEventListener("click",function(e){
+        e.preventDefault()
+
+        let Cardname=document.getElementById("cardname")
+        let Cardnumber=document.getElementById("cardnumber")
+        let exDate=document.getElementById("expdate");
+        let Cvv=document.getElementById("cvv")
+
+        if(Cardname.value==="" && Cardnumber.value==="" && exDate.value==="" && Cvv.value==""){
+            alert("Please fill out the details")
+        }
+        else{
+            alert("Your order has been placed")
+            formEl.reset()
+        }
+       
+    })
+   
+</script>
