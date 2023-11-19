@@ -5,52 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <style>
-        form{
-            box-sizing: border-box;
-            width: 400px;
-          
-            border: 1px solid rgb(230, 230, 230);
-            margin: 3% ;
-            padding: 3%;
-            background: white;
-           margin-left: 450px;
-           margin-top: 70px;
-        }
-        input{
-            display: block;
-          margin: 10px 0px;
-          font-size: 20px;
-          padding: 2%;
-          padding-left: 30px;
-        }
-        #submit{
-            text-align: center;
-            cursor: pointer;
-            width: 88%;
-       
-        background-color:#db3e19;
-        color: white;
-        border: none;
-        border-radius: 0.3em;
-        }
-        .new{
-            width: 50%;
-            margin-left: 480px;
-           
-            
-        }
-        .new >a{
-            color: #db3e19;
-            text-decoration: none;
-            padding-right: 200px;
-            font-size: 20px;
-            padding-top: 80px;
-        }
-        .new >a:hover{
-            color:orange;
-        }
-    </style>
+    <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
     <div class="new">
@@ -71,46 +26,4 @@
     </form>
 </body>
 </html>
-<script>
-    Lpdata=JSON.parse(localStorage.getItem("form"))||[]
-    let formEl=document.querySelector("form");
-    let Name=document.getElementById("name");
-    let Email=document.getElementById("email");
-    let Password=document.getElementById("password");
-    let Cpass=document.getElementById("pass");
-
-
-    formEl.addEventListener("submit",function(e){
-        e.preventDefault()
-
-        if(Password.value!==Cpass.value){
-            alert("Passwords do not match. Please try again.");
-            return;
-        }
-
-
-        let formdata={
-            name:Name.value,
-            email:Email.value,
-            password:Password.value,
-            confirmpassword:Cpass.value
-        }
-
-        let emailexist=false;
-
-        for(let i=0; i<Lpdata.length; i++){
-            if(Lpdata[i].email===Email.value){
-                emailexist=true;
-                break;
-            }
-        }
-        if(emailexist){
-            alert("Email already exists. Please try again with a different email.")
-            return
-        }
-
-        Lpdata.push(formdata)
-        localStorage.setItem("form",JSON.stringify(Lpdata))
-    })
-
-</script>
+<script src="js/signup.js"></script>

@@ -1,0 +1,87 @@
+body{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ #nav-bar > div>  h1>span{
+    color:#db3e19;
+}
+#nav >#nav-bar{
+    background-color: #232f3e;
+    height: 70px;
+    display: flex;
+}
+
+ #top{
+   
+  
+   text-align: right;
+   margin-right: 20px;
+}
+
+#top >p{
+   font-size: 14px;
+}
+#first{
+margin-top: 13px;
+}
+#top >p>span{
+    color: #db3e19;
+}
+#check{
+    
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;;
+
+}
+#check>img{
+    width: 600px;
+    margin-left: 300px;
+}
+#check>p{
+    font-size: 14px;
+    color: rgb(120, 117, 117);
+    margin-left: 300px;
+}
+.one{
+    width: 1000px;
+    height: 200px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 10px;
+   
+}
+.one>h3{
+    background-color: rgb(91, 89, 89);
+    color: white;
+}
+input{
+    display: block;
+    
+    font-size: 17px;
+    padding: 1%;
+    padding-left: 30px;
+}
+#submit{
+    text-align: center;
+    cursor: pointer;
+    width: 20vw;
+    background-color:#de5a3d;
+    color: white;
+    border: none;
+    height: 2.8vw;
+    margin-top: 12px;
+    
+}
+form{
+    margin-left: 40px;
+    margin-top: 18px;
+}
+#input{
+    display: grid;
+}
+
+#second >img{
+    width: 30px;
+}
