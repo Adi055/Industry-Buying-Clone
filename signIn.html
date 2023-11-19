@@ -5,52 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-    <style>
-        form{
-            box-sizing: border-box;
-            width: 400px;
-          
-            border: 1px solid rgb(230, 230, 230);
-            margin: 3% ;
-            padding: 3%;
-            background: white;
-           margin-left: 450px;
-           margin-top: 70px;
-        }
-        input{
-            display: block;
-          margin: 10px 0px;
-          font-size: 20px;
-          padding: 2%;
-          padding-left: 30px;
-        }
-        #submit{
-            text-align: center;
-            cursor: pointer;
-            width: 88%;
-       
-        background-color:#db3e19;
-        color: white;
-        border: none;
-        border-radius: 0.3em;
-        }
-        .new{
-            width: 50%;
-            margin-left: 480px;
-           
-            
-        }
-        .new >a{
-            color: #db3e19;
-            text-decoration: none;
-            padding-right: 200px;
-            font-size: 20px;
-            padding-top: 80px;
-        }
-        .new >a:hover{
-            color:orange;
-        }
-    </style>
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 <body>
     <div class="new">
@@ -60,7 +15,7 @@
 
     <form action="">
         <label for="">Name</label>
-        <input type="text" placeholder="You Name" id="name">
+        <input type="text" placeholder="Your Name" id="name">
         <label for="">Your Email id:-</label>
         <input placeholder="Email" type="email" id="email" />
         <label for="">Your Password:-</label>
@@ -70,32 +25,4 @@
     </form>
 </body>
 </html>
-<script>
-   
-    let formEl=document.querySelector("form");
-   
-
-
-    formEl.addEventListener("submit",UserlogIn)
-      
-    function UserlogIn(event){
-        event.preventDefault()
-        let Name=document.getElementById("name").value;
-        let Email=document.getElementById("email").value;
-        let Password=document.getElementById("password").value;
-        
-        Lpdata=JSON.parse(localStorage.getItem("form"))||[];
-        console.log(Lpdata)
-        let user = Lpdata.find((data) => data.name === Name && data.email === Email && data.password === Password );
-        console.log(user);
-        if( user){
-            window.location.href='home.html'
-        }
-        else{
-            alert("Invalid Email or Password. Please try again")
-        }
-
-
-    }
-
-</script>
+<script src="js/signin.js"></script>
